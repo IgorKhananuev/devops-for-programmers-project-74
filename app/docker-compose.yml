@@ -7,8 +7,9 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/app
-    command: ["npm", "test"]
+    command: ["npm", "run", "test"]
   test:
     build:
       context: .
       dockerfile: Dockerfile.production
+    command: ["npm", "test"]
