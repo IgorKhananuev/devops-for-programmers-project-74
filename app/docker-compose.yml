@@ -2,7 +2,13 @@ version: "3"
 
 services:
   app:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - .:/app
     command: ["npm", "test"]
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile.production
